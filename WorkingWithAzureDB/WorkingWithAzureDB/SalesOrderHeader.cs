@@ -11,15 +11,16 @@ namespace WorkingWithAzureDB
 {
     using System;
     using System.Collections.Generic;
-    
+    // Detailed information about the order
     public partial class SalesOrderHeader
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        // Constructor
         public SalesOrderHeader()
         {
             this.SalesOrderDetails = new HashSet<SalesOrderDetail>();
         }
-    
+        // Information about the order
         public int SalesOrderID { get; set; }
         public byte RevisionNumber { get; set; }
         public System.DateTime OrderDate { get; set; }
@@ -42,7 +43,7 @@ namespace WorkingWithAzureDB
         public string Comment { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
-    
+        
         public virtual Address Address { get; set; }
         public virtual Address Address1 { get; set; }
         public virtual Customer Customer { get; set; }
