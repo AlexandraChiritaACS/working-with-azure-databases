@@ -3,6 +3,7 @@ using System.Data;
 
 namespace WorkingWithAzureDB
 {
+    // Class which contains methods to display information from DB
     public static class ExtensionMethods
     {
         public static string Present(this Customer givenCustomer)
