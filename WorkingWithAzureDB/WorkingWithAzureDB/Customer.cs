@@ -11,10 +11,11 @@ namespace WorkingWithAzureDB
 {
     using System;
     using System.Collections.Generic;
-    
+    // Class to get information about a customer
     public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        // Constructor
         public Customer()
         {
             this.CustomerAddresses = new HashSet<CustomerAddress>();
@@ -38,6 +39,7 @@ namespace WorkingWithAzureDB
         public System.DateTime ModifiedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+ 
         public virtual ICollection<CustomerAddress> CustomerAddresses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
