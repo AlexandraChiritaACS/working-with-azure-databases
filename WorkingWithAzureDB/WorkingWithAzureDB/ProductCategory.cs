@@ -20,13 +20,15 @@ namespace WorkingWithAzureDB
             this.Products = new HashSet<Product>();
             this.ProductCategory1 = new HashSet<ProductCategory>();
         }
-    
+        
+        // These methods give important information to identify a product in DB
         public int ProductCategoryID { get; set; }
         public Nullable<int> ParentProductCategoryID { get; set; }
         public string Name { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
+        // Define Categories of Products
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
