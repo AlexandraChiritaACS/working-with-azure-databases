@@ -11,7 +11,7 @@ namespace WorkingWithAzureDB
 {
     using System;
     using System.Collections.Generic;
-    
+    // Class which provides information about error occured
     public partial class ErrorLog
     {
         public int ErrorLogID { get; set; }
