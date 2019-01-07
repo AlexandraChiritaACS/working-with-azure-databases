@@ -11,7 +11,7 @@ namespace WorkingWithAzureDB
 {
     using System;
     using System.Collections.Generic;
-    
+    // Bulder class for a product
     public partial class ProductModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,13 +20,14 @@ namespace WorkingWithAzureDB
             this.Products = new HashSet<Product>();
             this.ProductModelProductDescriptions = new HashSet<ProductModelProductDescription>();
         }
-    
+        
+        // Methods to get information about the product
         public int ProductModelID { get; set; }
         public string Name { get; set; }
         public string CatalogDescription { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
-    
+        // Information about the type/category of product
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
