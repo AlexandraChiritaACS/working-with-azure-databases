@@ -15,13 +15,15 @@ namespace WorkingWithAzureDB
     public partial class Address
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        // Constructor for the address
         public Address()
         {
             this.CustomerAddresses = new HashSet<CustomerAddress>();
             this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
             this.SalesOrderHeaders1 = new HashSet<SalesOrderHeader>();
         }
-    
+       
+        // Methods to extract cells information from the DB
         public int AddressID { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
@@ -31,7 +33,7 @@ namespace WorkingWithAzureDB
         public string PostalCode { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
-    
+        // Interfaces to be implemented to extends fiilling classes - builder
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CustomerAddress> CustomerAddresses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
