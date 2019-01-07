@@ -14,20 +14,24 @@ namespace WorkingWithAzureDB
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-    
+    // Building the model of the DB
     public partial class DBModel : DbContext
     {
+        // What's you name, DB?
         public DBModel()
             : base("name=DBModel")
         {
         }
-    
+        
+        // Exception in case of error in creating the DB
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
-        public virtual DbSet<BuildVersion> BuildVersions { get; set; }
+        
+        /* Methods for main functionalities and construction in DB:
+        information about actions, row (structural) types*/
+         public virtual DbSet<BuildVersion> BuildVersions { get; set; }
         public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
         public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
@@ -47,6 +51,7 @@ namespace WorkingWithAzureDB
         }
     
         [DbFunction("DBModel", "ufnGetCustomerInformation")]
+        // Information about the customer
         public virtual IQueryable<ufnGetCustomerInformation_Result> ufnGetCustomerInformation(Nullable<int> customerID)
         {
             var customerIDParameter = customerID.HasValue ?
@@ -55,7 +60,8 @@ namespace WorkingWithAzureDB
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<ufnGetCustomerInformation_Result>("[DBModel].[ufnGetCustomerInformation](@CustomerID)", customerIDParameter);
         }
-    
+        
+        // Error messages
         public virtual int uspLogError(ObjectParameter errorLogID)
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("uspLogError", errorLogID);
