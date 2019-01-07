@@ -11,7 +11,7 @@ namespace WorkingWithAzureDB
 {
     using System;
     using System.Collections.Generic;
-    
+    // Class (builer) which fills general information about DB
     public partial class BuildVersion
     {
         public byte SystemInformationID { get; set; }
