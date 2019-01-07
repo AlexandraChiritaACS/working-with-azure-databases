@@ -11,15 +11,16 @@ namespace WorkingWithAzureDB
 {
     using System;
     using System.Collections.Generic;
-    
+    // Class which defines the Product field data type
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        // Constructor
         public Product()
         {
             this.SalesOrderDetails = new HashSet<SalesOrderDetail>();
         }
-    
+        // Methods to get information about the products
         public int ProductID { get; set; }
         public string Name { get; set; }
         public string ProductNumber { get; set; }
@@ -37,7 +38,7 @@ namespace WorkingWithAzureDB
         public string ThumbnailPhotoFileName { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
-    
+        // Important informations for ordering
         public virtual ProductCategory ProductCategory { get; set; }
         public virtual ProductModel ProductModel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
