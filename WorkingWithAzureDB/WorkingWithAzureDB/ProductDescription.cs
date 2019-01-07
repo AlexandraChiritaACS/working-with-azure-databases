@@ -11,15 +11,16 @@ namespace WorkingWithAzureDB
 {
     using System;
     using System.Collections.Generic;
-    
+    // Class for get (and group) UIDs of a product
     public partial class ProductDescription
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        // Constructor
         public ProductDescription()
         {
             this.ProductModelProductDescriptions = new HashSet<ProductModelProductDescription>();
         }
-    
+        // Methods for UIDs of a product
         public int ProductDescriptionID { get; set; }
         public string Description { get; set; }
         public System.Guid rowguid { get; set; }
