@@ -11,7 +11,7 @@ namespace WorkingWithAzureDB
 {
     using System;
     using System.Collections.Generic;
-    
+    // Class to fill main information about a customer (identifing the customer in the DB)
     public partial class CustomerAddress
     {
         public int CustomerID { get; set; }
@@ -19,7 +19,7 @@ namespace WorkingWithAzureDB
         public string AddressType { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
-    
+        // GetInstance methods
         public virtual Address Address { get; set; }
         public virtual Customer Customer { get; set; }
     }
