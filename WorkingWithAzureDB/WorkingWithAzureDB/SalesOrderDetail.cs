@@ -11,9 +11,10 @@ namespace WorkingWithAzureDB
 {
     using System;
     using System.Collections.Generic;
-    
+    // Class for order type
     public partial class SalesOrderDetail
     {
+        // Information about the order
         public int SalesOrderID { get; set; }
         public int SalesOrderDetailID { get; set; }
         public short OrderQty { get; set; }
@@ -24,7 +25,10 @@ namespace WorkingWithAzureDB
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
+        
+        // Product ordered
         public virtual Product Product { get; set; }
+        // Customer who ordered
         public virtual SalesOrderHeader SalesOrderHeader { get; set; }
     }
 }
