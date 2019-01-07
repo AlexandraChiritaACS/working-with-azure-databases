@@ -11,7 +11,7 @@ namespace WorkingWithAzureDB
 {
     using System;
     using System.Collections.Generic;
-    
+    // Class to describe the field product
     public partial class ProductModelProductDescription
     {
         public int ProductModelID { get; set; }
