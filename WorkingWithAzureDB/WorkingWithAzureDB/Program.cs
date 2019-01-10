@@ -11,7 +11,7 @@ namespace WorkingWithAzureDB
         {
             Customer myself = new Customer
             {
-                CustomerID = 555, // Can we do this? Why?
+                CustomerID = 555, // static declaration
                 FirstName = "Alexandru",
                 LastName = "Petrescu",
                 Title = "Prof. ",
